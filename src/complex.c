@@ -1,4 +1,5 @@
 #include "dc_c/dc_complex.h"
+#include <tgmath.h>
 
 
 double dc_cabs(const struct dc_env *env, double complex z)
