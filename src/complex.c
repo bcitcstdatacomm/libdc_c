@@ -1,5 +1,4 @@
 #include "dc_c/dc_complex.h"
-#include <tgmath.h>
 
 
 double dc_cabs(const struct dc_env *env, double complex z)
@@ -310,28 +309,6 @@ float complex dc_ccoshf(const struct dc_env *env, float complex z)
     return ret_val;
 }
 
-long double complex dc_ccoshl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = ccoshl(z);
-
-    return ret_val;
-}
-
-long double complex dc_ccosl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = ccosl(z);
-
-    return ret_val;
-}
-
 double complex dc_cexp(const struct dc_env *env, double complex z)
 {
     double ret_val;
@@ -607,28 +584,6 @@ float complex dc_csinhf(const struct dc_env *env, float complex z)
     return ret_val;
 }
 
-long double complex dc_csinhl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = csinhl(z);
-
-    return ret_val;
-}
-
-long double complex dc_csinl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = csinl(z);
-
-    return ret_val;
-}
-
 double complex dc_csqrt(const struct dc_env *env, double complex z)
 {
     double ret_val;
@@ -702,28 +657,6 @@ float complex dc_ctanhf(const struct dc_env *env, float complex z)
     DC_TRACE(env);
     errno = 0;
     ret_val = ctanhf(z);
-
-    return ret_val;
-}
-
-long double complex dc_ctanhl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = ctanhl(z);
-
-    return ret_val;
-}
-
-long double complex dc_ctanl(const struct dc_env *env, long double complex z)
-{
-    long double ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = ctanl(z);
 
     return ret_val;
 }

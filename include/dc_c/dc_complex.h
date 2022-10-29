@@ -258,22 +258,6 @@ float complex dc_ccoshf(const struct dc_env *env, float complex z);
  * @param z
  * @return
  */
-long double complex dc_ccoshl(const struct dc_env *env, long double complex z);
-
-/**
- *
- * @param env
- * @param z
- * @return
- */
-long double complex dc_ccosl(const struct dc_env *env, long double complex z);
-
-/**
- *
- * @param env
- * @param z
- * @return
- */
 double complex dc_cexp(const struct dc_env *env, double complex z);
 
 /**
@@ -478,22 +462,6 @@ float complex dc_csinhf(const struct dc_env *env, float complex z);
  * @param z
  * @return
  */
-long double complex dc_csinhl(const struct dc_env *env, long double complex z);
-
-/**
- *
- * @param env
- * @param z
- * @return
- */
-long double complex dc_csinl(const struct dc_env *env, long double complex z);
-
-/**
- *
- * @param env
- * @param z
- * @return
- */
 double complex dc_csqrt(const struct dc_env *env, double complex z);
 
 /**
@@ -544,26 +512,19 @@ double complex dc_ctanh(const struct dc_env *env, double complex z);
  */
 float complex dc_ctanhf(const struct dc_env *env, float complex z);
 
-/**
- *
- * @param env
- * @param z
- * @return
- */
-long double complex dc_ctanhl(const struct dc_env *env, long double complex z);
-
-/**
- *
- * @param env
- * @param z
- * @return
- */
-long double complex dc_ctanl(const struct dc_env *env, long double complex z);
-
 
 #ifdef __cplusplus
 }
 #endif
+
+
+// Not on FreeBSD
+// long double complex dc_ccoshl(const struct dc_env *env, long double complex z);
+// long double complex dc_ccosl(const struct dc_env *env, long double complex z);
+// long double complex dc_csinhl(const struct dc_env *env, long double complex z);
+// long double complex dc_csinl(const struct dc_env *env, long double complex z);
+// long double complex dc_ctanhl(const struct dc_env *env, long double complex z);
+// long double complex dc_ctanl(const struct dc_env *env, long double complex z);
 
 
 #endif // LIBDC_C_DC_COMPLEX_H
