@@ -20,7 +20,6 @@
 
 
 #include <dc_env/env.h>
-#include <signal.h>
 
 
 #ifdef __cplusplus
@@ -47,6 +46,7 @@ int dc_raise(const struct dc_env *env, struct dc_error *err, int sig);
  */
 void (*dc_signal(const struct dc_env *env, struct dc_error *err, int sig,
                  void (*func)(int)))(int);
+
 
 #ifdef __cplusplus
 }

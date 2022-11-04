@@ -16,6 +16,7 @@
 
 
 #include "dc_c/dc_signal.h"
+#include <signal.h>
 
 
 int dc_raise(const struct dc_env *env, struct dc_error *err, int sig)

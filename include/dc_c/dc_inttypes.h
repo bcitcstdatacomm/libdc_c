@@ -93,6 +93,7 @@ intmax_t dc_wcstoimax(const struct dc_env *env, struct dc_error *err,const wchar
  */
 uintmax_t dc_wcstoumax(const struct dc_env *env, struct dc_error *err,const wchar_t *restrict nptr, wchar_t **restrict endptr, int base);
 
+
 #ifdef __cplusplus
 }
 #endif
