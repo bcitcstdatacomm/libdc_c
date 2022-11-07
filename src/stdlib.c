@@ -16,9 +16,9 @@
 
 
 #include "dc_c/dc_stdlib.h"
-#include "dc_c/dc_string.h"
-#include <errno.h>
-#include <unistd.h>
+//#include "dc_string.h"
+//#include <errno.h>
+//#include <unistd.h>
 
 
 void dc__Exit(const struct dc_env *env, int status)

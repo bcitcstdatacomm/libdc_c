@@ -18,6 +18,7 @@
 #include "dc_c/dc_string.h"
 #include <string.h>
 
+
 void *dc_memchr(const struct dc_env *env, const void *s, int c, size_t n)
 {
     void *ret_val;
