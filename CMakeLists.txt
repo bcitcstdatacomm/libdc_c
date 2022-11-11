@@ -202,9 +202,14 @@ set_target_properties(dc_c PROPERTIES
 
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
+find_library(LIBM m)
 
 target_link_libraries(dc_c PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_c PUBLIC ${LIBDC_ENV})
+
+if(LIBM)
+    target_link_libraries(dc_c PUBLIC ${LIBM})
+endif()
 
 install(TARGETS dc_c LIBRARY DESTINATION lib)
 install(FILES ${HEADER_LIST} DESTINATION include/dc_c)

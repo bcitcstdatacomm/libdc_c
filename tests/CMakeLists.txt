@@ -31,10 +31,15 @@ target_include_directories(libdc_c_test PRIVATE /usr/local/include)
 find_library(LIBCGREEN cgreen REQUIRED)
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
+find_library(LIBM m)
 
 target_link_libraries(libdc_c_test PRIVATE ${LIBCGREEN})
 target_link_libraries(libdc_c_test PRIVATE ${LIBDC_ERROR})
 target_link_libraries(libdc_c_test PRIVATE ${LIBDC_ENV})
 
-add_test(NAME dc_c_test COMMAND libdc_c_test)
+if(LIBM)
+    target_link_libraries(libdc_c_test PUBLIC ${LIBM})
+endif()
+
+add_test(NAME libdc_c_test COMMAND libdc_c_test)
 
