@@ -1,23 +1,29 @@
 #include "tests.h"
-#include <dc_error/error.h>
 #include <dc_env/env.h>
+#include <dc_error/error.h>
 
 
-static struct dc_c_env *env;
+// NOLINTBEGIN(cppcoreguidelines-avoid-non-const-global-variables)
+
+static struct dc_env *env;
 static struct dc_error *err;
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
+Describe(dc_stdlib);
+#pragma GCC diagnostic pop
 
-Describe(dc_inttypes);
-
-BeforeEach(dc_inttypes)
+BeforeEach(dc_stdlib)
 {
     err = dc_error_create(false);
     env = dc_env_create(err, false, NULL);
 }
 
-
 AfterEach(dc_stdlib)
 {
+    free(env);
+    dc_error_reset(err);
+    free(err);
 }
 
 TestSuite *dc_stdlib_tests(void)
@@ -28,3 +34,5 @@ TestSuite *dc_stdlib_tests(void)
 
     return suite;
 }
+
+// NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)

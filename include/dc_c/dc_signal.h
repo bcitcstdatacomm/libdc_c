@@ -44,8 +44,7 @@ int dc_raise(const struct dc_env *env, struct dc_error *err, int sig);
  * @param func
  * @return
  */
-void (*dc_signal(const struct dc_env *env, struct dc_error *err, int sig,
-                 void (*func)(int)))(int);
+void (*dc_signal(const struct dc_env *env, struct dc_error *err, int sig, void (*func)(int)))(int);
 
 
 #ifdef __cplusplus

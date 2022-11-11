@@ -213,13 +213,6 @@ void dc_qsort(const struct dc_env *env, void *base, size_t nel,
 /**
  *
  * @param env
- * @return
- */
-int dc_rand(const struct dc_env *env);
-
-/**
- *
- * @param env
  * @param err
  * @param ptr
  * @param size
@@ -227,13 +220,6 @@ int dc_rand(const struct dc_env *env);
  */
 void *dc_realloc(const struct dc_env *env, struct dc_error *err,
                  void *ptr, size_t size);
-
-/**
- *
- * @param env
- * @param seed
- */
-void dc_srand(const struct dc_env *env, unsigned seed);
 
 /**
  *
@@ -358,10 +344,15 @@ int dc_wctomb(const struct dc_env *env, struct dc_error *err, char *s,
 #endif
 
 
-double dc_atof(const char *);
-int dc_atoi(const char *);
-long dc_atol(const char *);
-long long dc_atoll(const char *);
+// obsolete
+// int dc_rand(const struct dc_env *env);
+// void dc_srand(const struct dc_env *env, unsigned seed);
+
+// better functions
+// double dc_atof(const char *);
+// int dc_atoi(const char *);
+// long dc_atol(const char *);
+// long long dc_atoll(const char *);
 
 
 #endif // LIBDC_C_DC_STDLIB_H

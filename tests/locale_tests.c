@@ -10,27 +10,37 @@ static struct dc_error *err;
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"
-Describe(dc_stdio);
+Describe(dc_locale);
 #pragma GCC diagnostic pop
 
-BeforeEach(dc_stdio)
+BeforeEach(dc_locale)
 {
     err = dc_error_create(false);
     env = dc_env_create(err, false, NULL);
 }
 
-AfterEach(dc_stdio)
+AfterEach(dc_locale)
 {
     free(env);
     dc_error_reset(err);
     free(err);
 }
 
-TestSuite *dc_stdio_tests(void)
+Ensure(dc_locale, dc_localeconv_tests)
+{
+}
+
+Ensure(dc_locale, dc_setlocale_tests)
+{
+}
+
+TestSuite *dc_locale_tests(void)
 {
     TestSuite *suite;
 
     suite = create_test_suite();
+    add_test_with_context(suite, dc_locale, dc_localeconv_tests);
+    add_test_with_context(suite, dc_locale, dc_setlocale_tests);
 
     return suite;
 }

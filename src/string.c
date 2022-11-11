@@ -15,7 +15,8 @@
  */
 
 
-#include "dc_c/dc_string.h"
+#include "dc_string.h"
+#include "dc_stdlib.h"
 #include <string.h>
 
 
@@ -143,14 +144,25 @@ size_t dc_strcspn(const struct dc_env *env, const char *s1, const char *s2)
 char *dc_strerror(const struct dc_env *env, struct dc_error *err, int errnum)
 {
     char *ret_val;
+    size_t len;
+    char *copy;
 
     DC_TRACE(env);
     errno = 0;
     ret_val = strerror(errnum);
 
-    if (ret_val != NULL)
+    if(errno != 0)
     {
         DC_ERROR_RAISE_ERRNO(err, errno);
+    }
+
+    len = dc_strlen(env, ret_val);
+    copy = dc_malloc(env, err, len + 1);
+
+    if(dc_error_has_no_error(err))
+    {
+        dc_strcpy(env, copy, ret_val);
+        ret_val = copy;
     }
 
     return ret_val;

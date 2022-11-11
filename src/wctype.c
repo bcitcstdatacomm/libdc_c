@@ -229,7 +229,8 @@ wctype_t dc_wctype(const struct dc_env *env, struct dc_error *err, const char *p
 
     if(ret_val == 0)
     {
-        // TODO: now what?
+        // TODO: message and code
+        DC_ERROR_RAISE_SYSTEM(err, "", -1);
     }
 
     return ret_val;

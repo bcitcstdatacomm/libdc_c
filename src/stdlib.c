@@ -223,7 +223,7 @@ int dc_mblen(const struct dc_env *env, struct dc_error *err, const char *s, size
 }
 
 size_t dc_mbstowcs(const struct dc_env *env,
-                   struct dc_error           *err,
+                   struct dc_error *err,
                    wchar_t * restrict pwcs,
                    const char * restrict s,
                    size_t n)
@@ -243,7 +243,7 @@ size_t dc_mbstowcs(const struct dc_env *env,
 }
 
 int dc_mbtowc(const struct dc_env *env,
-              struct dc_error           *err,
+              struct dc_error *err,
               wchar_t * restrict pwc,
               const char * restrict s,
               size_t n)
@@ -273,17 +273,6 @@ void dc_qsort(const struct dc_env *env,
     qsort(base, nel, width, compar);
 }
 
-int dc_rand(const struct dc_env *env)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno   = 0;
-    ret_val = rand();   // NOLINT(cert-msc30-c,cert-msc50-cpp)
-
-    return ret_val;
-}
-
 void *dc_realloc(const struct dc_env *env, struct dc_error *err, void *ptr, size_t size)
 {
     void *memory;
@@ -298,13 +287,6 @@ void *dc_realloc(const struct dc_env *env, struct dc_error *err, void *ptr, size
     }
 
     return memory;
-}
-
-void dc_srand(const struct dc_env *env, unsigned seed)
-{
-    DC_TRACE(env);
-    errno = 0;
-    srand(seed);
 }
 
 double

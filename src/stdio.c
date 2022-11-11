@@ -504,7 +504,10 @@ int dc_vfprintf(const struct dc_env *env, struct dc_error *err, FILE *restrict s
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vfprintf(stream, format, ap);     // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vfprintf(stream, format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)
@@ -521,7 +524,10 @@ int dc_vfscanf(const struct dc_env *env, struct dc_error *err, FILE *restrict st
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vfscanf(stream, format, ap);  // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vfscanf(stream, format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)
@@ -538,7 +544,10 @@ int dc_vprintf(const struct dc_env *env, struct dc_error *err, const char *restr
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vprintf(format, ap);  // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vprintf(format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)
@@ -555,7 +564,10 @@ int dc_vscanf(const struct dc_env *env, struct dc_error *err, const char *restri
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vscanf(format, ap);   // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vscanf(format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)
@@ -572,24 +584,10 @@ int dc_vsnprintf(const struct dc_env *env, struct dc_error *err, char *restrict 
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vsnprintf(s, n, format, ap);  // NOLINT(clang-diagnostic-format-nonliteral)
-
-    // TODO there is the error indicator of the stream too maybe?
-    if(ret_val == EOF)
-    {
-        DC_ERROR_RAISE_ERRNO(err, errno);
-    }
-
-    return ret_val;
-}
-
-int dc_vsprintf(const struct dc_env *env, struct dc_error *err, char *restrict s, const char *restrict format, va_list ap)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno   = 0;
-    ret_val = vsprintf(s, format, ap);  // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vsnprintf(s, n, format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)
@@ -606,7 +604,10 @@ int dc_vsscanf(const struct dc_env *env, struct dc_error *err, const char *restr
 
     DC_TRACE(env);
     errno   = 0;
-    ret_val = vsscanf(s, format, ap);   // NOLINT(clang-diagnostic-format-nonliteral)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    ret_val = vsscanf(s, format, ap);
+#pragma GCC diagnostic pop
 
     // TODO there is the error indicator of the stream too maybe?
     if(ret_val == EOF)

@@ -401,23 +401,16 @@ int dc_vsnprintf(const struct dc_env *env, struct dc_error *err, char *restrict 
  * @param ap
  * @return
  */
-int dc_vsprintf(const struct dc_env *env, struct dc_error *err, char *restrict s, const char *restrict format, va_list ap);
-
-/**
- *
- * @param env
- * @param err
- * @param s
- * @param format
- * @param ap
- * @return
- */
 int dc_vsscanf(const struct dc_env *env, struct dc_error *err, const char *restrict s, const char *restrict format, va_list ap);
 
 
 #ifdef __cplusplus
 }
 #endif
+
+
+// deprecated
+// int dc_vsprintf(const struct dc_env *env, struct dc_error *err, char *restrict s, const char *restrict format, va_list ap);
 
 
 #endif // LIBDC_C_DC_STDIO_H

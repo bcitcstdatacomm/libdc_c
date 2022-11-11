@@ -10,23 +10,23 @@ static struct dc_error *err;
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"
-Describe(dc_stdio);
+Describe(dc_ctype);
 #pragma GCC diagnostic pop
 
-BeforeEach(dc_stdio)
+BeforeEach(dc_ctype)
 {
     err = dc_error_create(false);
     env = dc_env_create(err, false, NULL);
 }
 
-AfterEach(dc_stdio)
+AfterEach(dc_ctype)
 {
     free(env);
     dc_error_reset(err);
     free(err);
 }
 
-TestSuite *dc_stdio_tests(void)
+TestSuite *dc_ctype_tests(void)
 {
     TestSuite *suite;
 

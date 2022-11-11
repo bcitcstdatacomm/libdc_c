@@ -87,8 +87,7 @@ void *dc_memset(const struct dc_env *env, void *s, int c, size_t n);
  * @param s2
  * @return
  */
-char *dc_strcat(const struct dc_env *env, char *restrict s1,
-                const char *restrict s2);
+char *dc_strcat(const struct dc_env *env, char *restrict s1, const char *restrict s2);
 
 /**
  *
@@ -125,8 +124,7 @@ int dc_strcoll(const struct dc_env *env, const char *s1, const char *s2);
  * @param s2
  * @return
  */
-char *dc_strcpy(const struct dc_env *env, char *restrict s1,
-                const char *restrict s2);
+char *dc_strcpy(const struct dc_env *env, char *restrict s1, const char *restrict s2);
 
 /**
  *
@@ -135,8 +133,7 @@ char *dc_strcpy(const struct dc_env *env, char *restrict s1,
  * @param s2
  * @return
  */
-size_t dc_strcspn(const struct dc_env *env, const char *s1,
-                  const char *s2);
+size_t dc_strcspn(const struct dc_env *env, const char *s1, const char *s2);
 
 /**
  *
@@ -145,8 +142,7 @@ size_t dc_strcspn(const struct dc_env *env, const char *s1,
  * @param errnum
  * @return
  */
-char *dc_strerror(const struct dc_env *env, struct dc_error *err,
-                  int errnum);
+char *dc_strerror(const struct dc_env *env, struct dc_error *err, int errnum);
 
 /**
  *
@@ -164,8 +160,7 @@ size_t dc_strlen(const struct dc_env *env, const char *s);
  * @param n
  * @return
  */
-char *dc_strncat(const struct dc_env *env, char *restrict s1,
-                 const char *restrict s2, size_t n);
+char *dc_strncat(const struct dc_env *env, char *restrict s1, const char *restrict s2, size_t n);
 
 /**
  *
@@ -175,8 +170,7 @@ char *dc_strncat(const struct dc_env *env, char *restrict s1,
  * @param n
  * @return
  */
-int dc_strncmp(const struct dc_env *env, const char *s1, const char *s2,
-               size_t n);
+int dc_strncmp(const struct dc_env *env, const char *s1, const char *s2, size_t n);
 
 /**
  *
@@ -186,8 +180,7 @@ int dc_strncmp(const struct dc_env *env, const char *s1, const char *s2,
  * @param n
  * @return
  */
-char *dc_strncpy(const struct dc_env *env, char *restrict s1,
-                 const char *restrict s2, size_t n);
+char *dc_strncpy(const struct dc_env *env, char *restrict s1, const char *restrict s2, size_t n);
 
 /**
  *
@@ -196,8 +189,7 @@ char *dc_strncpy(const struct dc_env *env, char *restrict s1,
  * @param s2
  * @return
  */
-char *dc_strpbrk(const struct dc_env *env, const char *s1,
-                 const char *s2);
+char *dc_strpbrk(const struct dc_env *env, const char *s1, const char *s2);
 
 /**
  *
@@ -215,8 +207,7 @@ char *dc_strrchr(const struct dc_env *env, const char *s, int c);
  * @param s2
  * @return
  */
-size_t dc_strspn(const struct dc_env *env, const char *s1,
-                 const char *s2);
+size_t dc_strspn(const struct dc_env *env, const char *s1, const char *s2);
 
 /**
  *
@@ -234,8 +225,7 @@ char *dc_strstr(const struct dc_env *env, const char *s1, const char *s2);
  * @param sep
  * @return
  */
-char *dc_strtok(const struct dc_env *env, char *restrict s,
-                const char *restrict sep);
+char *dc_strtok(const struct dc_env *env, char *restrict s, const char *restrict sep);
 
 /**
  *
@@ -246,8 +236,7 @@ char *dc_strtok(const struct dc_env *env, char *restrict s,
  * @param n
  * @return
  */
-size_t dc_strxfrm(const struct dc_env *env, struct dc_error *err,
-                  char *restrict s1, const char *restrict s2, size_t n);
+size_t dc_strxfrm(const struct dc_env *env, struct dc_error *err, char *restrict s1, const char *restrict s2, size_t n);
 
 
 #ifdef __cplusplus
