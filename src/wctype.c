@@ -15,7 +15,7 @@
  */
 
 
-#include "dc_wctype.h"
+#include "dc_c/dc_wctype.h"
 
 
 int dc_iswalnum(const struct dc_env *env, wint_t wc)

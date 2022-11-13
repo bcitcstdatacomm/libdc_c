@@ -15,7 +15,7 @@
  */
 
 
-#include "dc_wchar.h"
+#include "dc_c/dc_wchar.h"
 
 
 wint_t dc_btowc(const struct dc_env *env, int c)

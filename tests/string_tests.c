@@ -1,5 +1,5 @@
 #include "tests.h"
-#include "dc_string.h"
+#include "dc_c/dc_string.h"
 #include <dc_env/env.h>
 #include <dc_error/error.h>
 

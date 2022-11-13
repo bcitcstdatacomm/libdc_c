@@ -16,8 +16,6 @@
 
 
 #include "dc_c/dc_locale.h"
-#include "dc_stdlib.h"
-#include "dc_string.h"
 #include <locale.h>
 
 
